@@ -1,0 +1,66 @@
+﻿@model List<Student>
+@{
+    string title = "Student List";
+    ViewBag.Title = title;
+}
+
+<h1>Student List</h1>
+
+@if (ViewBag.AccessLevel >= 1 || ViewBag.AccessLevel <= 10)
+{
+    if (ViewBag.AccessLevel >= 8)
+    {
+        <h3>Hello, Admin</h3>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var student in @Model)
+                {
+                    <tr>
+                        <td>@student.FirstName</td>
+                        <td>@student.LastName</td>
+                        <td>@student.Grade</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Return</a>
+    }
+    else if (ViewBag.AccessLevel >= 2)
+    {
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var student in @Model)
+                {
+                    <tr>
+                        <td>@student.FirstName</td>
+                        <td>@student.LastName</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <h2>You do not have access to this data. Please return to home.</h2>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Return</a>
+    }
+}
+else
+{
+    <h2>You have entered an invalid access level. Please return to home.</h2>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Return</a>
+}
+
