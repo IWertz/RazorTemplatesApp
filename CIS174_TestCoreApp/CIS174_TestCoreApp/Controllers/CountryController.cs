@@ -20,6 +20,24 @@ namespace CIS174_TestCoreApp.Controllers
 
         public ViewResult Index(string activeGame = "0", string activeCat = "0")
         {
+            var session = new CountrySession(HttpContext.Session);
+            session.SetActiveGame(activeGame);
+            session.SetActiveCat(activeCat);
+
+            int? count = session.GetMyCountryCount();
+            if (count == null)
+            {
+                var cookies = new CountryCookies(Request.Cookies);
+                string[] ids = cookies.GetMyCountryIds();
+
+                List<Country> mycountries = new List<Country>();
+                if (ids.Length > 0)
+                {
+                    mycountries = context.Countries.Include(t => t.GameType).Include(t => t.Category).Where(t => ids.Contains(t.CountryId)).ToList();
+                }
+                session.SetMyCountries(mycountries);
+            }
+
             var model = new CountryListViewModel
             {
                 ActiveGame = activeGame,
@@ -47,12 +65,30 @@ namespace CIS174_TestCoreApp.Controllers
         [HttpGet]
         public ViewResult Details(string id)
         {
+            var session = new CountrySession(HttpContext.Session);
             var model = new CountryViewModel {
                 Country = context.Countries.Include(t => t.GameType).Include(t => t.Category).FirstOrDefault(t => t.CountryId == id),
-                ActiveGame = TempData.Peek("ActiveGame").ToString(),
-                ActiveCat = TempData.Peek("ActiveCat").ToString()
+                ActiveGame = session.GetActiveGame(),
+                ActiveCat = session.GetActiveCat()
             };
             return View(model);
+        }
+
+        [HttpPost]
+        public RedirectToActionResult Add(CountryViewModel model)
+        {
+            model.Country = context.Countries.Include(t => t.GameType).Include(t => t.Category).Where(t => t.CountryId == model.Country.CountryId).FirstOrDefault();
+            var session = new CountrySession(HttpContext.Session);
+            var countries = session.GetMyCountries();
+            countries.Add(model.Country);
+            session.SetMyCountries(countries);
+
+            var cookies = new CountryCookies(Response.Cookies);
+            cookies.SetMyCountryIds(countries);
+
+            TempData["message"] = $"{model.Country.Name} added to your favorites";
+
+            return RedirectToAction("Index", new { ActiveGame = session.GetActiveGame(), ActiveCat = session.GetActiveCat() });
         }
     }
 }
