@@ -2,9 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CIS174_TestCoreApp.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,6 +26,7 @@ namespace CIS174_TestCoreApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<CountryContext>(options => options.UseSqlServer(Configuration.GetConnectionString("CountryContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +51,11 @@ namespace CIS174_TestCoreApp
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "custom",
+                    pattern: "{controller}/{action}/game/{activeGame}/cat/{activeCat}");
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

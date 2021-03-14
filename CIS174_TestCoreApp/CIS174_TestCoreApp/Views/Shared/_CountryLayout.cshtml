@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+@{
+    Layout = "_Layout";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=devide-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="container">
+        <header class="text-center text-white">
+            <h1 class="bg-primary mt-3 p-3">Olympic Countries</h1>
+        </header>
+        <main>
+            @RenderBody()
+        </main>
+    </div>
+</body>
+</html>
