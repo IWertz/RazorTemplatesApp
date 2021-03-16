@@ -29,6 +29,7 @@ namespace CIS174_TestCoreApp
             services.AddSession();
             services.AddControllersWithViews().AddNewtonsoftJson();
             services.AddDbContext<CountryContext>(options => options.UseSqlServer(Configuration.GetConnectionString("CountryContext")));
+            services.AddDbContext<ToDoContext>(options => options.UseSqlServer(Configuration.GetConnectionString("CountryContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,9 +54,10 @@ namespace CIS174_TestCoreApp
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+
                 endpoints.MapControllerRoute(
                     name: "custom",
-                    pattern: "{controller}/{action}/game/{activeGame}/cat/{activeCat}");
+                    pattern: "{controller=Country}/{action=Index}/game/{activeGame}/cat/{activeCat}");
 
                 endpoints.MapControllerRoute(
                     name: "default",
