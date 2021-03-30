@@ -1,0 +1,29 @@
+﻿@model RegistrationModel
+@{
+    ViewData["Title"] = "ViewFormData";
+}
+
+<h2>View Form Details</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Contact Method</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Name</td>
+            <td>@Model.Address</td>
+            <td>@Model.Phone</td>
+            <td>@Model.Email</td>
+            <td>@Model.Age</td>
+            <td>@Model.Contact</td>
+        </tr>
+    </tbody>
+</table>

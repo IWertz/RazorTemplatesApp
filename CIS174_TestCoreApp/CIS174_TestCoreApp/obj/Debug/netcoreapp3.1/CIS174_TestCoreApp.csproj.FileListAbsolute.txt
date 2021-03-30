@@ -267,3 +267,5 @@ C:\Users\Snipe\OneDrive\Documents\GitHub\RazorTemplatesApp\CIS174_TestCoreApp\CI
 C:\Users\Snipe\OneDrive\Documents\GitHub\RazorTemplatesApp\CIS174_TestCoreApp\CIS174_TestCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ToDoLayout.cshtml.g.cs
 C:\Users\Snipe\OneDrive\Documents\GitHub\RazorTemplatesApp\CIS174_TestCoreApp\CIS174_TestCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\ToDo\Add.cshtml.g.cs
 C:\Users\Snipe\OneDrive\Documents\GitHub\RazorTemplatesApp\CIS174_TestCoreApp\CIS174_TestCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\ToDo\Index.cshtml.g.cs
+C:\Users\Snipe\OneDrive\Documents\GitHub\RazorTemplatesApp\CIS174_TestCoreApp\CIS174_TestCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\Form\Index.cshtml.g.cs
+C:\Users\Snipe\OneDrive\Documents\GitHub\RazorTemplatesApp\CIS174_TestCoreApp\CIS174_TestCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\ViewFormData\View1.cshtml.g.cs
