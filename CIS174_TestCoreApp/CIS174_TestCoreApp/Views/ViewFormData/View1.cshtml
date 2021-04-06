@@ -1,4 +1,4 @@
-﻿@model RegistrationModel
+﻿@model List<RegistrationModel>
 @{
     ViewData["Title"] = "ViewFormData";
 }
@@ -17,13 +17,16 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>@Model.Name</td>
-            <td>@Model.Address</td>
-            <td>@Model.Phone</td>
-            <td>@Model.Email</td>
-            <td>@Model.Age</td>
-            <td>@Model.Contact</td>
-        </tr>
+        @foreach (RegistrationModel r in Model)
+        {
+            <tr>
+                <td>@r.Name</td>
+                <td>@r.Address</td>
+                <td>@r.Phone</td>
+                <td>@r.Email</td>
+                <td>@r.Age</td>
+                <td>@r.Contact</td>
+            </tr>
+        }
     </tbody>
 </table>

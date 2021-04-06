@@ -9,9 +9,17 @@ namespace CIS174_TestCoreApp.Controllers
 {
     public class ViewFormDataController : Controller
     {
-        public IActionResult View1(RegistrationModel model)
+        private RegistrationModelContext context;
+
+        public ViewFormDataController(RegistrationModelContext ctx)
         {
-            return View(model);
+            context = ctx;
+        }
+
+        public IActionResult View1()
+        {
+            var tickets = context.Tickets.ToList();
+            return View(tickets);
         }
     }
 }

@@ -42,6 +42,9 @@
         </select>
     </div>
 
+    <input type="hidden" asp-for="RegistrationModelId" />
+
     <button type="submit" class="btn btn-primary">Confirm Submission</button>
     <button type="reset" class="btn btn-outline-primary">Reset Form</button>
+    <a asp-controller="ViewFormData" asp-action="View1">View All Submissions</a>
 </form>

@@ -8,6 +8,8 @@ namespace CIS174_TestCoreApp.Models
 {
     public class RegistrationModel
     {
+        [Required(ErrorMessage = "Please enter an ID.")]
+        public int RegistrationModelId { get; set; }
         [Required(ErrorMessage = "Please enter your name.")]
         public string Name { get; set; }
         [Required(ErrorMessage = "Please enter your address.")]

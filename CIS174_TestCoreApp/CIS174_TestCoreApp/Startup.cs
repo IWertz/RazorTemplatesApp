@@ -30,6 +30,7 @@ namespace CIS174_TestCoreApp
             services.AddControllersWithViews().AddNewtonsoftJson();
             services.AddDbContext<CountryContext>(options => options.UseSqlServer(Configuration.GetConnectionString("CountryContext")));
             services.AddDbContext<ToDoContext>(options => options.UseSqlServer(Configuration.GetConnectionString("CountryContext")));
+            services.AddDbContext<RegistrationModelContext>(options => options.UseSqlServer(Configuration.GetConnectionString("CountryContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
