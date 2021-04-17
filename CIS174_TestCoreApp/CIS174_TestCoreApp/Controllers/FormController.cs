@@ -9,12 +9,8 @@ namespace CIS174_TestCoreApp.Controllers
 {
     public class FormController : Controller
     {
-        private RegistrationModelContext context;
-
-        public FormController(RegistrationModelContext ctx)
-        {
-            context = ctx;
-        }
+        private IRepository<RegistrationModel> data { get; set; }
+        public FormController(IRepository<RegistrationModel> ctx) => data = ctx;
 
         [HttpGet]
         public IActionResult Index()
@@ -27,8 +23,8 @@ namespace CIS174_TestCoreApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                context.Tickets.Add(model);
-                context.SaveChanges();
+                data.Insert(model);
+                data.Save();
                 return RedirectToAction("View1", "ViewFormData");
             } 
             else

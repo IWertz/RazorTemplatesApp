@@ -24,7 +24,9 @@
     ".NETCoreApp,Version=v3.1": {
       "CIS174_TestCoreApp/1.0.0": {
         "dependencies": {
+          "Consul": "1.6.1.1",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "3.1.5",
+          "Microsoft.Azure.Devices": "1.31.0",
           "Microsoft.EntityFrameworkCore": "5.0.4",
           "Microsoft.EntityFrameworkCore.Design": "5.0.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.4",
@@ -32,6 +34,7 @@
           "Microsoft.EntityFrameworkCore.Tools": "5.0.4",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.5",
           "Microsoft.VisualStudio.Web.CodeGeneration.Utils": "3.1.5",
+          "NEST": "7.12.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -169,7 +172,7 @@
           "System.Data.Common": "4.2.2.0",
           "System.Data.DataSetExtensions": "4.0.1.0",
           "System.Data": "4.0.0.0",
-          "System.Diagnostics.Contracts": "4.0.4.0",
+          "System.Diagnostics.Contracts.Reference": "4.0.4.0",
           "System.Diagnostics.Debug.Reference": "4.1.2.0",
           "System.Diagnostics.EventLog": "4.0.2.0",
           "System.Diagnostics.FileVersionInfo": "4.0.4.0",
@@ -177,7 +180,7 @@
           "System.Diagnostics.StackTrace": "4.1.2.0",
           "System.Diagnostics.TextWriterTraceListener": "4.1.2.0",
           "System.Diagnostics.Tools.Reference": "4.1.2.0",
-          "System.Diagnostics.TraceSource": "4.1.2.0",
+          "System.Diagnostics.TraceSource.Reference": "4.1.2.0",
           "System.Diagnostics.Tracing.Reference": "4.2.2.0",
           "System": "4.0.0.0",
           "System.Drawing": "4.0.0.0",
@@ -218,10 +221,10 @@
           "System.Net.ServicePoint": "4.0.2.0",
           "System.Net.Sockets.Reference": "4.2.2.0",
           "System.Net.WebClient": "4.0.2.0",
-          "System.Net.WebHeaderCollection": "4.1.2.0",
+          "System.Net.WebHeaderCollection.Reference": "4.1.2.0",
           "System.Net.WebProxy": "4.0.2.0",
-          "System.Net.WebSockets.Client": "4.1.2.0",
-          "System.Net.WebSockets": "4.1.2.0",
+          "System.Net.WebSockets.Client.Reference": "4.1.2.0",
+          "System.Net.WebSockets.Reference": "4.1.2.0",
           "System.Numerics": "4.0.0.0",
           "System.Numerics.Vectors": "4.1.6.0",
           "System.ObjectModel.Reference": "4.1.2.0",
@@ -310,6 +313,36 @@
           "CIS174_TestCoreApp.dll": {}
         }
       },
+      "Consul/1.6.1.1": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Consul.dll": {
+            "assemblyVersion": "1.6.1.1",
+            "fileVersion": "1.6.1.1"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Consul.dll": {}
+        }
+      },
+      "Elasticsearch.Net/7.12.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "System.Buffers": "4.5.1",
+          "System.Diagnostics.DiagnosticSource": "5.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Elasticsearch.Net.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.12.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.1/Elasticsearch.Net.dll": {}
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {
@@ -326,7 +359,7 @@
       "Microsoft.AspNetCore.JsonPatch/3.1.5": {
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
-          "Newtonsoft.Json": "12.0.2"
+          "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.dll": {
@@ -341,7 +374,7 @@
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson/3.1.5": {
         "dependencies": {
           "Microsoft.AspNetCore.JsonPatch": "3.1.5",
-          "Newtonsoft.Json": "12.0.2",
+          "Newtonsoft.Json": "12.0.3",
           "Newtonsoft.Json.Bson": "1.0.2"
         },
         "runtime": {
@@ -374,6 +407,55 @@
         "dependencies": {
           "Microsoft.AspNetCore.Html.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Razor": "2.2.0"
+        }
+      },
+      "Microsoft.Azure.Amqp/2.4.7": {
+        "dependencies": {
+          "System.Net.WebSockets.Client": "4.0.2",
+          "System.Runtime.Serialization.Primitives": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Azure.Amqp.dll": {
+            "assemblyVersion": "2.4.0.0",
+            "fileVersion": "2.2.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Azure.Amqp.dll": {}
+        }
+      },
+      "Microsoft.Azure.Devices/1.31.0": {
+        "dependencies": {
+          "Microsoft.Azure.Amqp": "2.4.7",
+          "Microsoft.Azure.Devices.Shared": "1.27.0",
+          "Microsoft.Rest.ClientRuntime": "2.3.21",
+          "Newtonsoft.Json": "12.0.3",
+          "System.Diagnostics.Contracts": "4.3.0",
+          "System.Diagnostics.TraceSource": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Azure.Devices.dll": {
+            "assemblyVersion": "1.31.0.0",
+            "fileVersion": "1.31.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Azure.Devices.dll": {}
+        }
+      },
+      "Microsoft.Azure.Devices.Shared/1.27.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Azure.Devices.Shared.dll": {
+            "assemblyVersion": "1.27.0.0",
+            "fileVersion": "1.27.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Azure.Devices.Shared.dll": {}
         }
       },
       "Microsoft.CodeAnalysis.Analyzers/2.9.4": {},
@@ -964,7 +1046,7 @@
       "Microsoft.IdentityModel.JsonWebTokens/5.6.0": {
         "dependencies": {
           "Microsoft.IdentityModel.Tokens": "5.6.0",
-          "Newtonsoft.Json": "12.0.2"
+          "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {
@@ -1005,7 +1087,7 @@
       "Microsoft.IdentityModel.Protocols.OpenIdConnect/5.6.0": {
         "dependencies": {
           "Microsoft.IdentityModel.Protocols": "5.6.0",
-          "Newtonsoft.Json": "12.0.2",
+          "Newtonsoft.Json": "12.0.3",
           "System.IdentityModel.Tokens.Jwt": "5.6.0"
         },
         "runtime": {
@@ -1021,7 +1103,7 @@
       "Microsoft.IdentityModel.Tokens/5.6.0": {
         "dependencies": {
           "Microsoft.IdentityModel.Logging": "5.6.0",
-          "Newtonsoft.Json": "12.0.2",
+          "Newtonsoft.Json": "12.0.3",
           "System.Security.Cryptography.Cng": "4.5.0"
         },
         "runtime": {
@@ -1036,6 +1118,20 @@
       },
       "Microsoft.NETCore.Platforms/3.1.0": {},
       "Microsoft.NETCore.Targets/1.1.3": {},
+      "Microsoft.Rest.ClientRuntime/2.3.21": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Rest.ClientRuntime.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.3.21.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Rest.ClientRuntime.dll": {}
+        }
+      },
       "Microsoft.VisualStudio.Web.CodeGeneration/3.1.5": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "5.0.1",
@@ -1053,7 +1149,7 @@
       },
       "Microsoft.VisualStudio.Web.CodeGeneration.Contracts/3.1.5": {
         "dependencies": {
-          "Newtonsoft.Json": "12.0.2"
+          "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll": {
@@ -1069,7 +1165,7 @@
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "5.0.1",
           "Microsoft.VisualStudio.Web.CodeGeneration.Templating": "3.1.5",
-          "Newtonsoft.Json": "12.0.2"
+          "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll": {
@@ -1131,7 +1227,7 @@
         "dependencies": {
           "Microsoft.CodeAnalysis.CSharp.Workspaces": "3.3.1",
           "Microsoft.VisualStudio.Web.CodeGeneration.Contracts": "3.1.5",
-          "Newtonsoft.Json": "12.0.2",
+          "Newtonsoft.Json": "12.0.3",
           "NuGet.Frameworks": "4.7.0"
         },
         "runtime": {
@@ -1174,6 +1270,20 @@
       "Microsoft.Win32.SystemEvents/4.7.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0"
+        }
+      },
+      "NEST/7.12.0": {
+        "dependencies": {
+          "Elasticsearch.Net": "7.12.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Nest.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.12.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Nest.dll": {}
         }
       },
       "NETStandard.Library/1.6.1": {
@@ -1224,11 +1334,11 @@
           "System.Xml.XDocument": "4.3.0"
         }
       },
-      "Newtonsoft.Json/12.0.2": {
+      "Newtonsoft.Json/12.0.3": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "12.0.0.0",
-            "fileVersion": "12.0.2.23222"
+            "fileVersion": "12.0.3.23909"
           }
         },
         "compile": {
@@ -1237,7 +1347,7 @@
       },
       "Newtonsoft.Json.Bson/1.0.2": {
         "dependencies": {
-          "Newtonsoft.Json": "12.0.2"
+          "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
@@ -1316,15 +1426,7 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Buffers/4.3.0": {
-        "dependencies": {
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Diagnostics.Tracing": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Threading": "4.3.0"
-        }
-      },
+      "System.Buffers/4.5.1": {},
       "System.Collections/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -1564,6 +1666,11 @@
           "System.Text.Encoding": "4.3.0"
         }
       },
+      "System.Diagnostics.Contracts/4.3.0": {
+        "dependencies": {
+          "System.Runtime": "4.3.0"
+        }
+      },
       "System.Diagnostics.Debug/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -1587,6 +1694,19 @@
           "Microsoft.NETCore.Platforms": "3.1.0",
           "Microsoft.NETCore.Targets": "1.1.3",
           "System.Runtime": "4.3.0"
+        }
+      },
+      "System.Diagnostics.TraceSource/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.1.0",
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0",
+          "runtime.native.System": "4.3.0"
         }
       },
       "System.Diagnostics.Tracing/4.3.0": {
@@ -1631,7 +1751,7 @@
         "dependencies": {
           "Microsoft.IdentityModel.JsonWebTokens": "5.6.0",
           "Microsoft.IdentityModel.Tokens": "5.6.0",
-          "Newtonsoft.Json": "12.0.2"
+          "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {
@@ -1655,7 +1775,7 @@
       "System.IO.Compression/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
-          "System.Buffers": "4.3.0",
+          "System.Buffers": "4.5.1",
           "System.Collections": "4.3.0",
           "System.Diagnostics.Debug": "4.3.0",
           "System.IO": "4.3.0",
@@ -1673,7 +1793,7 @@
       },
       "System.IO.Compression.ZipFile/4.3.0": {
         "dependencies": {
-          "System.Buffers": "4.3.0",
+          "System.Buffers": "4.5.1",
           "System.IO": "4.3.0",
           "System.IO.Compression": "4.3.0",
           "System.IO.FileSystem": "4.3.0",
@@ -1795,6 +1915,44 @@
           "System.IO": "4.3.0",
           "System.Net.Primitives": "4.3.0",
           "System.Runtime": "4.3.0",
+          "System.Threading.Tasks": "4.3.0"
+        }
+      },
+      "System.Net.WebHeaderCollection/4.0.1": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0"
+        }
+      },
+      "System.Net.WebSockets/4.0.0": {
+        "dependencies": {
+          "Microsoft.Win32.Primitives": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Threading.Tasks": "4.3.0"
+        }
+      },
+      "System.Net.WebSockets.Client/4.0.2": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.1.0",
+          "Microsoft.Win32.Primitives": "4.3.0",
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Diagnostics.Tracing": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Net.Primitives": "4.3.0",
+          "System.Net.WebHeaderCollection": "4.0.1",
+          "System.Net.WebSockets": "4.0.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Runtime.Handles": "4.3.0",
+          "System.Runtime.InteropServices": "4.3.0",
+          "System.Security.Cryptography.X509Certificates": "4.3.0",
+          "System.Text.Encoding": "4.3.0",
+          "System.Threading": "4.3.0",
           "System.Threading.Tasks": "4.3.0"
         }
       },
@@ -3094,7 +3252,7 @@
         },
         "compileOnly": true
       },
-      "System.Diagnostics.Contracts/4.0.4.0": {
+      "System.Diagnostics.Contracts.Reference/4.0.4.0": {
         "compile": {
           "System.Diagnostics.Contracts.dll": {}
         },
@@ -3142,7 +3300,7 @@
         },
         "compileOnly": true
       },
-      "System.Diagnostics.TraceSource/4.1.2.0": {
+      "System.Diagnostics.TraceSource.Reference/4.1.2.0": {
         "compile": {
           "System.Diagnostics.TraceSource.dll": {}
         },
@@ -3388,7 +3546,7 @@
         },
         "compileOnly": true
       },
-      "System.Net.WebHeaderCollection/4.1.2.0": {
+      "System.Net.WebHeaderCollection.Reference/4.1.2.0": {
         "compile": {
           "System.Net.WebHeaderCollection.dll": {}
         },
@@ -3400,13 +3558,13 @@
         },
         "compileOnly": true
       },
-      "System.Net.WebSockets.Client/4.1.2.0": {
+      "System.Net.WebSockets.Client.Reference/4.1.2.0": {
         "compile": {
           "System.Net.WebSockets.Client.dll": {}
         },
         "compileOnly": true
       },
-      "System.Net.WebSockets/4.1.2.0": {
+      "System.Net.WebSockets.Reference/4.1.2.0": {
         "compile": {
           "System.Net.WebSockets.dll": {}
         },
@@ -3900,6 +4058,20 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Consul/1.6.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AJkBiix1bT3cSZRO6OD0Ee31Co1qgVkmVBFwpxym9WdxH5K6LfmAZ8Vb8nGvo9EKC+ir2sv5fKIrY75aENcMDA==",
+      "path": "consul/1.6.1.1",
+      "hashPath": "consul.1.6.1.1.nupkg.sha512"
+    },
+    "Elasticsearch.Net/7.12.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IEFCaSNJCUgoFLRa5Py+F0fEDNK+Yy4xSMyXodsslN/8HjQOrRc5Sd2ry7OS6APp+qkgFpMxFkzeNI18WrVadw==",
+      "path": "elasticsearch.net/7.12.0",
+      "hashPath": "elasticsearch.net.7.12.0.nupkg.sha512"
+    },
     "Humanizer.Core/2.8.26": {
       "type": "package",
       "serviceable": true,
@@ -3948,6 +4120,27 @@
       "sha512": "sha512-7YqK+H61lN6yj9RiQUko7oaOhKtRR9Q/kBcoWNRemhJdTIWOh1OmdvJKzZrMWOlff3BAjejkPQm+0V0qXk+B1w==",
       "path": "microsoft.aspnetcore.razor.runtime/2.2.0",
       "hashPath": "microsoft.aspnetcore.razor.runtime.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.Azure.Amqp/2.4.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LVGKl6K5JRDUALwG0KeJPMl4to8NhRsTto/l8cCCQeCP/dCtFvFTgEmqXsIazw92s3vM1LQP6EHwgUpx9FyIng==",
+      "path": "microsoft.azure.amqp/2.4.7",
+      "hashPath": "microsoft.azure.amqp.2.4.7.nupkg.sha512"
+    },
+    "Microsoft.Azure.Devices/1.31.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7VkhpIKgT87KhNeMiZaXQR+/OEtUTw0Soxp2CgWz/V2xriXaTVgfyjfdPcdnVA+Ed+CFFCPVcHiMM0PHtUWjOQ==",
+      "path": "microsoft.azure.devices/1.31.0",
+      "hashPath": "microsoft.azure.devices.1.31.0.nupkg.sha512"
+    },
+    "Microsoft.Azure.Devices.Shared/1.27.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tQFknUXXP6FEJfBPD1Oay4kLiDfTCVqvHhYH47LTfdlRLCOzNWCeTB9xBOjBZ/2zjg93Bj8MooOPa62jXVfoqg==",
+      "path": "microsoft.azure.devices.shared/1.27.0",
+      "hashPath": "microsoft.azure.devices.shared.1.27.0.nupkg.sha512"
     },
     "Microsoft.CodeAnalysis.Analyzers/2.9.4": {
       "type": "package",
@@ -4194,6 +4387,13 @@
       "path": "microsoft.netcore.targets/1.1.3",
       "hashPath": "microsoft.netcore.targets.1.1.3.nupkg.sha512"
     },
+    "Microsoft.Rest.ClientRuntime/2.3.21": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KDYlgTyO693V6pi6SGk9eg+dDvKjuOgmkapbHdpnB1SmTPKpvWxVLIMyARJsCFLfB6axyURUJHOfvxBQ0yJKeg==",
+      "path": "microsoft.rest.clientruntime/2.3.21",
+      "hashPath": "microsoft.rest.clientruntime.2.3.21.nupkg.sha512"
+    },
     "Microsoft.VisualStudio.Web.CodeGeneration/3.1.5": {
       "type": "package",
       "serviceable": true,
@@ -4271,6 +4471,13 @@
       "path": "microsoft.win32.systemevents/4.7.0",
       "hashPath": "microsoft.win32.systemevents.4.7.0.nupkg.sha512"
     },
+    "NEST/7.12.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-x8sG11oEaiwGuaYgB9zXJhhzimOpE36LbLbmecqPv/d1WctomCLVdb1D8SxqJEKhIcemvx0/97cODVNBaGhgOA==",
+      "path": "nest/7.12.0",
+      "hashPath": "nest.7.12.0.nupkg.sha512"
+    },
     "NETStandard.Library/1.6.1": {
       "type": "package",
       "serviceable": true,
@@ -4278,12 +4485,12 @@
       "path": "netstandard.library/1.6.1",
       "hashPath": "netstandard.library.1.6.1.nupkg.sha512"
     },
-    "Newtonsoft.Json/12.0.2": {
+    "Newtonsoft.Json/12.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
-      "path": "newtonsoft.json/12.0.2",
-      "hashPath": "newtonsoft.json.12.0.2.nupkg.sha512"
+      "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "path": "newtonsoft.json/12.0.3",
+      "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
     },
     "Newtonsoft.Json.Bson/1.0.2": {
       "type": "package",
@@ -4418,12 +4625,12 @@
       "path": "system.appcontext/4.3.0",
       "hashPath": "system.appcontext.4.3.0.nupkg.sha512"
     },
-    "System.Buffers/4.3.0": {
+    "System.Buffers/4.5.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ratu44uTIHgeBeI0dE8DWvmXVBSo4u7ozRZZHOMmK/JPpYyo0dAfgSiHlpiObMQ5lEtEyIXA40sKRYg5J6A8uQ==",
-      "path": "system.buffers/4.3.0",
-      "hashPath": "system.buffers.4.3.0.nupkg.sha512"
+      "sha512": "sha512-Rw7ijyl1qqRS0YQD/WycNst8hUUMgrMH4FCn1nNm27M4VxchZ1js3fVjQaANHO5f3sN4isvP4a+Met9Y4YomAg==",
+      "path": "system.buffers/4.5.1",
+      "hashPath": "system.buffers.4.5.1.nupkg.sha512"
     },
     "System.Collections/4.3.0": {
       "type": "package",
@@ -4544,6 +4751,13 @@
       "path": "system.console/4.3.0",
       "hashPath": "system.console.4.3.0.nupkg.sha512"
     },
+    "System.Diagnostics.Contracts/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eelRRbnm+OloiQvp9CXS0ixjNQldjjkHO4iIkR5XH2VIP8sUB/SIpa1TdUW6/+HDcQ+MlhP3pNa1u5SbzYuWGA==",
+      "path": "system.diagnostics.contracts/4.3.0",
+      "hashPath": "system.diagnostics.contracts.4.3.0.nupkg.sha512"
+    },
     "System.Diagnostics.Debug/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -4564,6 +4778,13 @@
       "sha512": "sha512-UUvkJfSYJMM6x527dJg2VyWPSRqIVB0Z7dbjHst1zmwTXz5CcXSYJFWRpuigfbO1Lf7yfZiIaEUesfnl/g5EyA==",
       "path": "system.diagnostics.tools/4.3.0",
       "hashPath": "system.diagnostics.tools.4.3.0.nupkg.sha512"
+    },
+    "System.Diagnostics.TraceSource/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VnYp1NxGx8Ww731y2LJ1vpfb/DKVNKEZ8Jsh5SgQTZREL/YpWRArgh9pI8CDLmgHspZmLL697CaLvH85qQpRiw==",
+      "path": "system.diagnostics.tracesource/4.3.0",
+      "hashPath": "system.diagnostics.tracesource.4.3.0.nupkg.sha512"
     },
     "System.Diagnostics.Tracing/4.3.0": {
       "type": "package",
@@ -4690,6 +4911,27 @@
       "sha512": "sha512-m6icV6TqQOAdgt5N/9I5KNpjom/5NFtkmGseEH+AK/hny8XrytLH3+b5M8zL/Ycg3fhIocFpUMyl/wpFnVRvdw==",
       "path": "system.net.sockets/4.3.0",
       "hashPath": "system.net.sockets.4.3.0.nupkg.sha512"
+    },
+    "System.Net.WebHeaderCollection/4.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XX2TIAN+wBSAIV51BU2FvvXMdstUa8b0FBSZmDWjZdwUMmggQSifpTOZ5fNH20z9ZCg2fkV1L5SsZnpO2RQDRQ==",
+      "path": "system.net.webheadercollection/4.0.1",
+      "hashPath": "system.net.webheadercollection.4.0.1.nupkg.sha512"
+    },
+    "System.Net.WebSockets/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2KJo8hir6Edi9jnMDAMhiJoI691xRBmKcbNpwjrvpIMOCTYOtBpSsSEGBxBDV7PKbasJNaFp1+PZz1D7xS41Hg==",
+      "path": "system.net.websockets/4.0.0",
+      "hashPath": "system.net.websockets.4.0.0.nupkg.sha512"
+    },
+    "System.Net.WebSockets.Client/4.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NUCcDroX4lCQXgOrzlwIZ1u9YJ0krfyF0wk0ONnyLUmcQoEiYV2/OfUPRqUwQBbpH1BlGApkLgoQUwMqb5+c1g==",
+      "path": "system.net.websockets.client/4.0.2",
+      "hashPath": "system.net.websockets.client.4.0.2.nupkg.sha512"
     },
     "System.ObjectModel/4.3.0": {
       "type": "package",
@@ -5719,7 +5961,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Diagnostics.Contracts/4.0.4.0": {
+    "System.Diagnostics.Contracts.Reference/4.0.4.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -5759,7 +6001,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Diagnostics.TraceSource/4.1.2.0": {
+    "System.Diagnostics.TraceSource.Reference/4.1.2.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -5964,7 +6206,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Net.WebHeaderCollection/4.1.2.0": {
+    "System.Net.WebHeaderCollection.Reference/4.1.2.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -5974,12 +6216,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Net.WebSockets.Client/4.1.2.0": {
+    "System.Net.WebSockets.Client.Reference/4.1.2.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
-    "System.Net.WebSockets/4.1.2.0": {
+    "System.Net.WebSockets.Reference/4.1.2.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""

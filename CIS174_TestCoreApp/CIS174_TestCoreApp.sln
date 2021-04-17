@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIS174_TestCoreApp", "CIS174_TestCoreApp\CIS174_TestCoreApp.csproj", "{79C56729-083E-4EFD-AC63-9205ABA3A2CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CIS174_TestCoreApp", "CIS174_TestCoreApp\CIS174_TestCoreApp.csproj", "{79C56729-083E-4EFD-AC63-9205ABA3A2CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistrationFormTest", "RegistrationFormTest\RegistrationFormTest.csproj", "{EBD7C444-E3A2-43FB-9483-29BB7EEF2C82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{79C56729-083E-4EFD-AC63-9205ABA3A2CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79C56729-083E-4EFD-AC63-9205ABA3A2CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79C56729-083E-4EFD-AC63-9205ABA3A2CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBD7C444-E3A2-43FB-9483-29BB7EEF2C82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBD7C444-E3A2-43FB-9483-29BB7EEF2C82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBD7C444-E3A2-43FB-9483-29BB7EEF2C82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBD7C444-E3A2-43FB-9483-29BB7EEF2C82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
